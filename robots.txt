@@ -22,7 +22,7 @@ Allow: /*.svg
 Allow: /*.ico
 
 # 网站地图位置
-Sitemap: https://yoursite.com/sitemap.xml
+Sitemap: https://geticon.online/sitemap.xml
 
 # 针对特定搜索引擎的优化
 User-agent: Googlebot

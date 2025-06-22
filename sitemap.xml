@@ -4,134 +4,134 @@
     
     <!-- 主页 - 中文版 -->
     <url>
-        <loc>https://yoursite.com/</loc>
+        <loc>https://geticon.online/</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://yoursite.com/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/en/" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geticon.online/" />
     </url>
     
     <!-- 主页 - 英文版 -->
     <url>
-        <loc>https://yoursite.com/en/</loc>
+        <loc>https://geticon.online/en/</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://yoursite.com/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/en/" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geticon.online/" />
     </url>
     
     <!-- 热门应用页面 -->
     <url>
-        <loc>https://yoursite.com/popular</loc>
+        <loc>https://geticon.online/popular</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/popular" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/popular" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/en/popular" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/popular" />
     </url>
     
     <!-- 分类页面 -->
     <url>
-        <loc>https://yoursite.com/categories</loc>
+        <loc>https://geticon.online/categories</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/categories" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/categories" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/en/categories" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/categories" />
     </url>
     
     <!-- 游戏分类 -->
     <url>
-        <loc>https://yoursite.com/categories/games</loc>
+        <loc>https://geticon.online/categories/games</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/categories/games" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/categories/games" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/en/categories/games" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/categories/games" />
     </url>
     
     <!-- 办公分类 -->
     <url>
-        <loc>https://yoursite.com/categories/business</loc>
+        <loc>https://geticon.online/categories/business</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/categories/business" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/categories/business" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/en/categories/business" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/categories/business" />
     </url>
     
     <!-- 社交分类 -->
     <url>
-        <loc>https://yoursite.com/categories/social</loc>
+        <loc>https://geticon.online/categories/social</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/categories/social" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/categories/social" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/en/categories/social" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/categories/social" />
     </url>
     
     <!-- 摄影分类 -->
     <url>
-        <loc>https://yoursite.com/categories/photo</loc>
+        <loc>https://geticon.online/categories/photo</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/categories/photo" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/categories/photo" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/en/categories/photo" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/categories/photo" />
     </url>
     
     <!-- 音乐分类 -->
     <url>
-        <loc>https://yoursite.com/categories/music</loc>
+        <loc>https://geticon.online/categories/music</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/categories/music" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/categories/music" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/en/categories/music" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/categories/music" />
     </url>
     
     <!-- 关于我们页面 -->
     <url>
-        <loc>https://yoursite.com/about.html</loc>
+        <loc>https://geticon.online/about.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/about.html" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/about.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/about.html" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/about.html" />
     </url>
     
     <!-- 使用指南页面 -->
     <url>
-        <loc>https://yoursite.com/guide</loc>
+        <loc>https://geticon.online/guide</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/guide" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/guide" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/en/guide" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/guide" />
     </url>
     
     <!-- FAQ页面 -->
     <url>
-        <loc>https://yoursite.com/faq</loc>
+        <loc>https://geticon.online/faq</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/faq" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/faq" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/en/faq" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/faq" />
     </url>
     
     <!-- 隐私政策页面 -->
     <url>
-        <loc>https://yoursite.com/privacy</loc>
+        <loc>https://geticon.online/privacy</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/privacy" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/privacy" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://geticon.online/en/privacy" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://geticon.online/privacy" />
     </url>
     
 </urlset> 
