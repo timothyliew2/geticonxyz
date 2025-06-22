@@ -96,12 +96,12 @@
     
     <!-- 关于我们页面 -->
     <url>
-        <loc>https://yoursite.com/about</loc>
-        <lastmod>2023-12-01</lastmod>
+        <loc>https://yoursite.com/about.html</loc>
+        <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/en/about" />
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/about" />
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://yoursite.com/about.html" />
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://yoursite.com/about.html" />
     </url>
     
     <!-- 使用指南页面 -->
