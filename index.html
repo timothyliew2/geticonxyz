@@ -10,6 +10,19 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3569373007781002" crossorigin="anonymous"></script>
     
+    <!-- 域名重定向脚本 - 必须在所有其他脚本之前 -->
+    <script>
+        // 检查当前域名，如果是 geticon.online 则自动跳转到 geticon.xyz
+        (function() {
+            if (window.location.hostname === 'geticon.online') {
+                // 保持当前的路径和查询参数
+                const newUrl = 'https://geticon.xyz' + window.location.pathname + window.location.search + window.location.hash;
+                // 使用 301 永久重定向
+                window.location.replace(newUrl);
+            }
+        })();
+    </script>
+
     <!-- Google tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SCJ74BPRB7"></script>
     <script>

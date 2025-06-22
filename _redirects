@@ -1,0 +1,14 @@
+# Netlify 重定向配置文件
+# 将 geticon.online 的所有请求重定向到 geticon.xyz
+
+# 主域名重定向
+https://geticon.online/*    https://geticon.xyz/:splat    301!
+http://geticon.online/*     https://geticon.xyz/:splat    301!
+
+# www子域名重定向  
+https://www.geticon.online/*    https://geticon.xyz/:splat    301!
+http://www.geticon.online/*     https://geticon.xyz/:splat    301!
+
+# 确保www.geticon.xyz也重定向到geticon.xyz（去掉www）
+https://www.geticon.xyz/*   https://geticon.xyz/:splat    301!
+http://www.geticon.xyz/*    https://geticon.xyz/:splat    301!

@@ -3,6 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 域名重定向脚本 - 必须在所有其他脚本之前 -->
+    <script>
+        // 检查当前域名，如果是 geticon.online 则自动跳转到 geticon.xyz
+        (function() {
+            if (window.location.hostname === 'geticon.online') {
+                // 保持当前的路径和查询参数
+                const newUrl = 'https://geticon.xyz' + window.location.pathname + window.location.search + window.location.hash;
+                // 使用 301 永久重定向
+                window.location.replace(newUrl);
+            }
+        })();
+    </script>
+    
     <title>关于我们 - Geticon高质量App图标下载平台</title>
     <meta name="description" content="Geticon是专业的App图标下载平台，为设计师、开发者和营销人员提供50万+高清iOS和Android应用图标。支持多分辨率下载、批量下载和最新的苹果风格圆角功能。">
     <meta name="keywords" content="Geticon,关于我们,app图标下载,应用图标,设计资源,图标库,iOS图标,Android图标,圆角图标,苹果风格">
