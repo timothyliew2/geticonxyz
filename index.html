@@ -428,6 +428,62 @@
         .fade-in-permanent {
             animation: fadeInPermanent 0.5s ease-in-out forwards;
         }
+        
+        /* 圆角开关样式 */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: #6366f1;
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(20px);
+        }
+        
+        /* Tailwind CSS的peer样式补充 */
+        .peer:checked ~ .peer-checked\:bg-primary-600 {
+            background-color: #6366f1;
+        }
+        
+        .peer:checked ~ .peer-checked\:after\:translate-x-full::after {
+            transform: translateX(100%);
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -669,17 +725,35 @@
                 </div>
                 
                 <!-- 购物车底部操作栏 -->
-                <div class="border-t border-gray-200 px-6 py-4 bg-gray-50 flex justify-between items-center">
-                    <div class="text-sm text-gray-500">
-                        <span data-lang-key="cart.selected">已选择</span> <span id="cartSelectedCount" class="font-medium text-gray-900">0</span> <span data-lang-key="cart.items">个图标</span>
+                <div class="border-t border-gray-200 px-6 py-4 bg-gray-50">
+                    <!-- 圆角设置区域 -->
+                    <div class="mb-4 p-3 bg-white rounded-lg border border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-magic text-primary-600"></i>
+                                <label class="text-sm font-medium text-gray-700" data-lang-key="corner.title">圆角设置</label>
+                                <div class="text-xs text-gray-500" data-lang-key="corner.subtitle">(苹果风格)</div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="cornerRadiusToggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
                     </div>
-                    <div class="flex space-x-3">
-                        <button id="clearCartBtn" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50 text-sm font-medium" data-lang-key="cart.clear">
-                            清空购物车
-                        </button>
-                        <button id="downloadAllBtn" class="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed">
-                            <i class="fas fa-download mr-2"></i> <span data-lang-key="cart.download">批量下载</span>
-                        </button>
+                    
+                    <!-- 原有的操作按钮区域 -->
+                    <div class="flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            <span data-lang-key="cart.selected">已选择</span> <span id="cartSelectedCount" class="font-medium text-gray-900">0</span> <span data-lang-key="cart.items">个图标</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button id="clearCartBtn" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50 text-sm font-medium" data-lang-key="cart.clear">
+                                清空购物车
+                            </button>
+                            <button id="downloadAllBtn" class="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed">
+                                <i class="fas fa-download mr-2"></i> <span data-lang-key="cart.download">批量下载</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -764,6 +838,10 @@
         let cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
         const MAX_CART_ITEMS = 20;  // 购物车最大容量
         
+        // 圆角设置相关变量
+        let cornerRadiusEnabled = localStorage.getItem('cornerRadiusEnabled') === 'true';
+        const APPLE_CORNER_RADIUS = 22.37; // 苹果图标标准圆角比例（约22.37%）
+        
         // 语言配置
         let currentLang = 'zh-CN';
         
@@ -843,6 +921,8 @@
                 'cart.download.allow': '个图标，请允许浏览器下载多个文件。下载完成后将自动清空购物车。',
                 'cart.download.complete': '所有图标下载完成，购物车已清空！',
                 'cart.download.failed': '下载失败，请重试',
+                'corner.title': '圆角设置',
+                'corner.subtitle': '(苹果风格)',
                 'footer.description': 'AppIcon是一个帮助设计师、开发者和营销人员获取高质量应用图标资源的平台。',
                 'footer.quickLinks': '快速链接',
                 'footer.favorites': '收藏夹',
@@ -912,6 +992,8 @@
                 'cart.download.allow': ' icons. Please allow your browser to download multiple files. The cart will be cleared after download is complete.',
                 'cart.download.complete': 'All icons downloaded. Cart has been cleared!',
                 'cart.download.failed': 'Download failed, please try again',
+                'corner.title': 'Corner Radius',
+                'corner.subtitle': '(Apple Style)',
                 'footer.description': 'AppIcon is a platform helping designers, developers, and marketers access high-quality app icon resources.',
                 'footer.quickLinks': 'QUICK LINKS',
                 'footer.favorites': 'Favorites',
@@ -1797,6 +1879,20 @@
             if (downloadAllBtn) {
                 downloadAllBtn.addEventListener('click', downloadAllIcons);
             }
+            
+            // 圆角开关事件监听器
+            const cornerRadiusToggle = document.getElementById('cornerRadiusToggle');
+            if (cornerRadiusToggle) {
+                // 设置初始状态
+                cornerRadiusToggle.checked = cornerRadiusEnabled;
+                
+                // 添加事件监听器
+                cornerRadiusToggle.addEventListener('change', function() {
+                    cornerRadiusEnabled = this.checked;
+                    // 保存设置到本地存储
+                    localStorage.setItem('cornerRadiusEnabled', cornerRadiusEnabled.toString());
+                });
+            }
         }
         
         // 显示购物车模态框
@@ -2018,24 +2114,36 @@
                             highestQualitySize = "100x100";
                         }
                         
-                        // 使用Fetch API获取图片内容作为Blob
-                        fetch(iconUrl)
-                            .then(response => response.blob())
-                            .then(blob => {
+                        // 处理图片下载（支持圆角）
+                        (async () => {
+                            try {
+                                let finalBlob;
+                                let filename = `${item.trackName}_${highestQualitySize}.png`;
+                                
+                                if (cornerRadiusEnabled) {
+                                    // 如果启用圆角，先处理图片
+                                    finalBlob = await applyCornerRadius(iconUrl);
+                                    filename = `${item.trackName}_${highestQualitySize}_rounded.png`;
+                                } else {
+                                    // 如果不启用圆角，直接获取原图
+                                    const response = await fetch(iconUrl);
+                                    finalBlob = await response.blob();
+                                }
+                                
                                 // 创建Blob URL
-                                const blobUrl = URL.createObjectURL(blob);
+                                const blobUrl = URL.createObjectURL(finalBlob);
                                 
                                 // 创建一个隐藏的a标签并触发下载
                                 const a = document.createElement('a');
                                 a.href = blobUrl;
-                                a.download = `${item.trackName}_${highestQualitySize}.png`;
+                                a.download = filename;
                                 a.style.display = 'none';
-                            document.body.appendChild(a);
-                            a.click();
+                                document.body.appendChild(a);
+                                a.click();
                                 
                                 // 清理
                                 setTimeout(() => {
-                            document.body.removeChild(a);
+                                    document.body.removeChild(a);
                                     URL.revokeObjectURL(blobUrl);
                                     
                                     // 计数下载完成的项目
@@ -2074,39 +2182,103 @@
                                         }, 500);
                                     }
                                 }, 100);
-                            })
-                            .catch(error => {
+                            } catch (error) {
                                 console.error('下载图标失败:', error);
                                 downloadedCount++; // 即使失败也计数，确保最终会清空购物车
-                            });
+                            }
+                        })();
                     }, index * 300); // 每300ms下载一个，避免浏览器限制
                 });
             }, 100);
         }
         
-        // 单个图标下载
-        function downloadSingleIcon(url, filename) {
-            fetch(url)
-                .then(response => response.blob())
-                .then(blob => {
-                    const blobUrl = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = blobUrl;
-                    a.download = filename;
-                    a.style.display = 'none';
-                    document.body.appendChild(a);
-                    a.click();
+        // 圆角处理函数 - 使用苹果图标标准圆角
+        function applyCornerRadius(imageUrl) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.crossOrigin = 'anonymous'; // 处理跨域问题
+                
+                img.onload = function() {
+                    // 创建Canvas元素
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
                     
-                    setTimeout(() => {
+                    // 设置Canvas尺寸与图片相同
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    
+                    // 计算苹果标准圆角半径
+                    // 苹果图标使用连续曲线（squircle），这里用圆角矩形近似
+                    const radius = Math.min(img.width, img.height) * (APPLE_CORNER_RADIUS / 100);
+                    
+                    // 绘制圆角矩形路径
+                    ctx.beginPath();
+                    ctx.moveTo(radius, 0);
+                    ctx.lineTo(img.width - radius, 0);
+                    ctx.quadraticCurveTo(img.width, 0, img.width, radius);
+                    ctx.lineTo(img.width, img.height - radius);
+                    ctx.quadraticCurveTo(img.width, img.height, img.width - radius, img.height);
+                    ctx.lineTo(radius, img.height);
+                    ctx.quadraticCurveTo(0, img.height, 0, img.height - radius);
+                    ctx.lineTo(0, radius);
+                    ctx.quadraticCurveTo(0, 0, radius, 0);
+                    ctx.closePath();
+                    
+                    // 裁剪到圆角区域
+                    ctx.clip();
+                    
+                    // 绘制图片
+                    ctx.drawImage(img, 0, 0);
+                    
+                    // 转换为Blob
+                    canvas.toBlob((blob) => {
+                        if (blob) {
+                            resolve(blob);
+                        } else {
+                            reject(new Error('转换图片失败'));
+                        }
+                    }, 'image/png', 1.0);
+                };
+                
+                img.onerror = () => reject(new Error('加载图片失败'));
+                img.src = imageUrl;
+            });
+        }
+
+        // 单个图标下载
+        async function downloadSingleIcon(url, filename) {
+            try {
+                let finalBlob;
+                
+                if (cornerRadiusEnabled) {
+                    // 如果启用圆角，先处理图片
+                    finalBlob = await applyCornerRadius(url);
+                    // 修改文件名以标识圆角版本
+                    filename = filename.replace('.png', '_rounded.png');
+                } else {
+                    // 如果不启用圆角，直接下载原图
+                    const response = await fetch(url);
+                    finalBlob = await response.blob();
+                }
+                
+                // 创建下载链接
+                const blobUrl = URL.createObjectURL(finalBlob);
+                const a = document.createElement('a');
+                a.href = blobUrl;
+                a.download = filename;
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                
+                setTimeout(() => {
                     document.body.removeChild(a);
-                        URL.revokeObjectURL(blobUrl);
-                    }, 100);
-                })
-                .catch(error => {
-                    console.error('下载图标失败:', error);
-                    const failedMessage = translations[currentLang]['cart.download.failed'] || '下载失败，请重试';
-                    alert(failedMessage);
-                });
+                    URL.revokeObjectURL(blobUrl);
+                }, 100);
+            } catch (error) {
+                console.error('下载图标失败:', error);
+                const failedMessage = translations[currentLang]['cart.download.failed'] || '下载失败，请重试';
+                alert(failedMessage);
+            }
         }
         
         // 更新购物车计数
